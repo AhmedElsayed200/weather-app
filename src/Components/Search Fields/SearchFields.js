@@ -1,9 +1,10 @@
 import { useState } from "react";
 import "./SearchFields.css";
 
-const SearchFields = () => {
-  const [city, setCity] = useState("");
+const SearchFields = (props) => {
+  const [city, setCity] = useState(null);
   //   const [country, setCountry] = useState("");
+  const { getCity } = props;
 
   const handleChange = (e) => {
     //   if (e.target.name === "cityInput")
@@ -13,7 +14,7 @@ const SearchFields = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // getWeatherData(city, country);
+    getCity(city);
   };
 
   return (
