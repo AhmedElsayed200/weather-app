@@ -3,11 +3,12 @@ import "./SearchFields.css";
 
 const SearchFields = () => {
   const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
+  //   const [country, setCountry] = useState("");
 
   const handleChange = (e) => {
-    if (e.target.name === "cityInput") setCity(e.target.value);
-    else setCountry(e.target.value);
+    //   if (e.target.name === "cityInput")
+    setCity(e.target.value);
+    // else setCountry(e.target.value);
   };
 
   const handleSubmit = (e) => {
@@ -31,6 +32,7 @@ const SearchFields = () => {
         id="countryInput"
         className="input-field"
         placeholder="Country..."
+        // onChange={handleChange}
       />
       <input type="submit" id="getWeatherBut" value="Get Weather" />
     </form>
