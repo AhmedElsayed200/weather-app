@@ -1,5 +1,5 @@
 import SearchFields from './Components/Search Fields/SearchFields';
-import FetchWeatherData from "../Fetch Weather Data/FetchWeatherData";
+import FetchWeatherData from './Components/Fetch Weather Data/FetchWeatherData';
 import './App.css';
 
 function App() {
