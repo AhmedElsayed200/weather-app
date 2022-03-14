@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const FetchWeatherData = (props) => {
-  const { city, APIKey } = props;
+  const { city, APIKey, getWeatherResponse } = props;
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -11,10 +11,9 @@ const FetchWeatherData = (props) => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `https://jsonplaceholder.typicode.com/todos/1`
+          `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
         );
-        setData(response);
-        // console.log(response);
+        setData(response.data);
         setError(null);
       } catch (err) {
         setError(err.message);
@@ -24,11 +23,12 @@ const FetchWeatherData = (props) => {
       }
     };
     getData();
-  }, []);
+  }, [city, APIKey]);
 
-  //   console.log(data);
-  console.log("123");
-  return "ahm";
+  console.log(data);
+  getWeatherResponse(data, loading, error);
+
+  return null;
 };
 
 export default FetchWeatherData;
