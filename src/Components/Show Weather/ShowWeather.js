@@ -1,8 +1,8 @@
 const ShowWeather = (props) => {
   const { response } = props;
-  console.log(response);
+  //   console.log(response);
 
-  return <div>{response}</div>;
+  return <div>{response[1]}</div>;
 };
 
 export default ShowWeather;

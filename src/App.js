@@ -5,7 +5,7 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [city, setCity] = useState("Cairo");
+  const [city, setCity] = useState(null);
 
   const getCity = (cityName) => {
     setCity(cityName);
@@ -14,6 +14,8 @@ function App() {
   const response = (
     <FetchWeatherData city={city} APIKey="813e04829d7f4adce86a0adc2d148434" />
   );
+
+  console.log(<FetchWeatherData />);
 
   return (
     <div className="App">

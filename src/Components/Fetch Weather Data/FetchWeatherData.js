@@ -11,9 +11,10 @@ const FetchWeatherData = (props) => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          `api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`
+          `https://jsonplaceholder.typicode.com/todos/1`
         );
-        setData(response.data);
+        setData(response);
+        // console.log(response);
         setError(null);
       } catch (err) {
         setError(err.message);
@@ -23,9 +24,11 @@ const FetchWeatherData = (props) => {
       }
     };
     getData();
-  }, [city, APIKey]);
+  }, []);
 
-  return [data, loading, error];
+  //   console.log(data);
+  console.log("123");
+  return "ahm";
 };
 
 export default FetchWeatherData;
